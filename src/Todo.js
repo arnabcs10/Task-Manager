@@ -8,7 +8,7 @@ import EditIcon from '@material-ui/icons/Edit';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 
 
-export default function Todo({task,completed}) {
+export default function Todo({id,task,completed,removeTodo}) {
     const [state,setState] = React.useState(completed);
     const handleChange = () =>{
         setState(!state);
@@ -21,12 +21,12 @@ export default function Todo({task,completed}) {
             </ListItemText>
             <ListItemSecondaryAction>
 
-                <IconButton aria-lable='Delete'>
+                <IconButton aria-labels='Delete' onClick={()=> removeTodo(id) }>
                     <DeleteIcon />
                 </IconButton>
 
                 <IconButton>
-                    <EditIcon aria-lable='Edit'/>
+                    <EditIcon aria-label='Edit'/>
                 </IconButton>
 
             </ListItemSecondaryAction>
