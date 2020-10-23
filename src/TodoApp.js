@@ -1,4 +1,5 @@
 import React,{useState} from 'react';
+import {v4 as uuid} from 'uuid';
 import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import AppBar from '@material-ui/core/AppBar';
@@ -14,7 +15,7 @@ function TodoApp(){
     ]
     const [todos,setTodos] = useState(initialTodos);
     const addTodo = (newTodoText) => {
-        setTodos([...todos, { id:4, task:newTodoText, completed:false } ]);
+        setTodos([...todos, { id:uuid(), task:newTodoText, completed:false } ]);
     }
 
     const deleteTodo = id => {
