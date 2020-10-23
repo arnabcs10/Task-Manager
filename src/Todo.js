@@ -8,15 +8,15 @@ import EditIcon from '@material-ui/icons/Edit';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 
 
-export default function Todo({id,task,completed,removeTodo}) {
-    const [state,setState] = React.useState(completed);
+export default function Todo({id,task,completed,removeTodo,toggleTodo}) {
+    
     const handleChange = () =>{
-        setState(!state);
+        toggleTodo(id);
     }
     return (
         <ListItem>
-            <Checkbox tabIndex={-1} checked={state} onChange={handleChange}/>
-            <ListItemText style={{textDecoration: state ? "line-through":"none" }}>
+            <Checkbox tabIndex={-1} checked={completed} onChange={handleChange}/>
+            <ListItemText style={{textDecoration: completed ? "line-through":"none" }}>
                 {task}
             </ListItemText>
             <ListItemSecondaryAction>
