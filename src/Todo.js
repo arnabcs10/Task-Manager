@@ -16,7 +16,7 @@ export default function Todo({id,task,completed,removeTodo,toggleTodo,updateTodo
         toggleTodo(id);
     }
     return (
-        <ListItem>
+        <ListItem style={{height:"64px"}}>
             {isEditing ? <EditTodoForm id={id} task={task} updateTodo={updateTodo} toggleIsEditing={toggle}/> : 
             <>
                 <Checkbox tabIndex={-1} checked={completed} onChange={handleChange}/>

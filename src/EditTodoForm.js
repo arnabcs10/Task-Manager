@@ -8,13 +8,16 @@ function EditTodoForm(props) {
             e.preventDefault();
             props.updateTodo(value,props.id);
             props.toggleIsEditing();
-        }}>
+        }} 
+         style={{marginLeft:"1rem",width:"50%"}}
+        >
             <TextField 
                 value={value} 
                 onChange={handleChange} 
                 margin='normal'
                 label='Edit'
                 fullWidth
+                autoFocus
             />
         </form>
     );
