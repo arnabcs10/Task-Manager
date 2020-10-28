@@ -4,6 +4,7 @@ import Divider from '@material-ui/core/Divider';
 import List from '@material-ui/core/List';
 import Todo from './Todo';
 function TodoList(props){
+    if(props.todos.length)
     return(
         <Paper>
             <List>
@@ -23,7 +24,9 @@ function TodoList(props){
                 ))}
             </List>
         </Paper>
+       
     );
+    return null;
 }
 
 export default TodoList;
