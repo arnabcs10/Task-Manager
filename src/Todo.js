@@ -11,10 +11,10 @@ import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import {TodosContext} from './contexts/todos.context';
 
 export default function Todo({id,task,completed}) {
-    const {deleteTodo,toggleTodo} = useContext(TodosContext);
+    const {dispatch} = useContext(TodosContext);
     const [isEditing,toggle] = useToggleState(false);
     const handleChange = () =>{
-        toggleTodo(id);
+        dispatch({ type: "TOGGLE", id: id });
     }
     return (
         <ListItem style={{height:"64px"}}>
@@ -26,7 +26,7 @@ export default function Todo({id,task,completed}) {
                 </ListItemText>
                 <ListItemSecondaryAction>
 
-                    <IconButton aria-label='Delete' onClick={()=> deleteTodo(id) }>
+                    <IconButton aria-label='Delete' onClick={()=> dispatch({type:"REMOVE",id:id}) }>
                         <DeleteIcon />
                     </IconButton>
 
