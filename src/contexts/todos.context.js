@@ -1,16 +1,14 @@
 import React,{createContext,useReducer} from 'react';
 import todoReducer from '../reducers/todo.reducer';
+import useLocalStorageReducer from '../hooks/useLocalStorageReducer';
 
-const defaultTodos = [
-    {id:1,task:"drink water",completed:false},
-    {id:2,task:"drink",completed:false}
-];
+const defaultTodos = [];
 
 export const TodosContext = createContext(defaultTodos);
 export const DispatchContext = createContext();
 
 export function TodosProvider(props){
-    const [todos,dispatch] = useReducer(todoReducer,defaultTodos);
+    const [todos,dispatch] = useLocalStorageReducer("todos",defaultTodos,todoReducer);
 
     return(
         <TodosContext.Provider value={todos}>
