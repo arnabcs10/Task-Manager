@@ -17,14 +17,14 @@ function Todo({id,task,completed}) {
         dispatch({ type: "TOGGLE", id: id });
     }
     return (
-        <ListItem style={{height:"64px"}}>
+        <ListItem  >
             {isEditing ? <EditTodoForm id={id} task={task} toggleIsEditing={toggle}/> : 
             <>
                 <Checkbox tabIndex={-1} checked={completed} onChange={handleChange}/>
-                <ListItemText style={{textDecoration: completed ? "line-through":"none" }}>
+                <ListItemText  style={{textDecoration: completed ? "line-through":"none", wordWrap: "break-word" }} >
                     {task}
                 </ListItemText>
-                <ListItemSecondaryAction>
+                {/* <ListItemSecondaryAction> */}
 
                     <IconButton aria-label='Delete' onClick={()=> dispatch({type:"REMOVE",id:id}) }>
                         <DeleteIcon />
@@ -34,7 +34,7 @@ function Todo({id,task,completed}) {
                         <EditIcon />
                     </IconButton>
 
-                </ListItemSecondaryAction>
+                {/* </ListItemSecondaryAction> */}
             </>
             }
         </ListItem>

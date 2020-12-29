@@ -18,9 +18,11 @@ import {DispatchContext} from './contexts/todos.context';
                     value={value} 
                     onChange={handleChange} 
                     margin='normal'
+                    multiline={true}
                     label='Add New Todo'
                     fullWidth
                 />
+                <button>Add</button>
             </form>
         </Paper>
     )
