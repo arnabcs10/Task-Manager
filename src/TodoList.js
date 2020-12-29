@@ -9,7 +9,7 @@ function TodoList(){
     const todos = useContext(TodosContext);
     if(todos.length)
     return(
-        <Paper>
+        <Paper style={{margin:"1rem 0"}}>
             <List>
                 {todos.map( (todo,i) => (
                     <>
