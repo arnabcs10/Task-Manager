@@ -15,7 +15,7 @@ function TodoApp(){
                 padding:0,
                 margin:0,
                 height:"100vh",
-                
+                backgroundColor:"rgb(236,236,236)"
             }}
             elevation={0}
         >
@@ -24,7 +24,7 @@ function TodoApp(){
                     <Typography color='inherit'>Task Manager</Typography>
                 </Toolbar>
             </AppBar>
-            <Grid container justify='center' style={{marginTop:"1rem"}} style={{backgroundColor:"rgb(236,236,236)"}}>
+            <Grid container justify='center' style={{marginTop:"1rem"}} >
                 <Grid item xs={11} md={8} lg={4}>
                     <TodosProvider>
                         <TodoForm />
