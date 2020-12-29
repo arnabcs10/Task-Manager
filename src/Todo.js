@@ -7,7 +7,6 @@ import Checkbox from '@material-ui/core/Checkbox';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';
-import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import {DispatchContext} from './contexts/todos.context';
 
 function Todo({id,task,completed}) {
@@ -24,7 +23,7 @@ function Todo({id,task,completed}) {
                 <ListItemText  style={{textDecoration: completed ? "line-through":"none", wordWrap: "break-word" }} >
                     {task}
                 </ListItemText>
-                {/* <ListItemSecondaryAction> */}
+                
 
                     <IconButton aria-label='Delete' onClick={()=> dispatch({type:"REMOVE",id:id}) }>
                         <DeleteIcon />
@@ -34,7 +33,7 @@ function Todo({id,task,completed}) {
                         <EditIcon />
                     </IconButton>
 
-                {/* </ListItemSecondaryAction> */}
+                
             </>
             }
         </ListItem>
